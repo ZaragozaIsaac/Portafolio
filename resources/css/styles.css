@@ -1,0 +1,190 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #4a90e2;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin: 0;
+    padding-right: 40px; /* Añadir un poco de espacio desde el borde derecho */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Sobre mí */
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.profile-photo {
+    width: 150px;
+    border-radius: 50%;
+    border: 4px solid #4a90e2;
+}
+
+.description {
+    max-width: 500px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e94e77;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Sección de proyectos */
+.projects {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.project {
+    width: 30%;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Sección de reconocimientos */
+.recognitions {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.recognition-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.recognition {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.recognition img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.recognition-text {
+    max-width: 500px;
+}
+
+/* Sección de certificaciones */
+.certifications {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.certification-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.certification {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 30%;
+}
+
+.certification a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.contact-info{
+
+list-style: none;
+
+}
