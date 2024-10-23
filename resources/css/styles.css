@@ -62,15 +62,16 @@ nav ul li a {
 }
 
 .profile-photo {
-    width: 150px;
-    border-radius: 50%;
+    width: 250px;
+    border-radius: 10%;
     border: 4px solid #4a90e2;
 }
 
 .description {
     max-width: 500px;
-    text-align: center;
+    text-align:justify;
 }
+
 
 .btn {
     display: inline-block;
@@ -81,6 +82,7 @@ nav ul li a {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
+    
 }
 
 /* Sección de proyectos */
@@ -133,7 +135,7 @@ nav ul li a {
 
 .recognition {
     display: flex;
-    align-items: center;
+    align-items:center;
     background-color: white;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -143,14 +145,21 @@ nav ul li a {
 }
 
 .recognition img {
-    width: 150px;
+    width: 350px;
     height: auto;
     margin-right: 20px;
 }
 
+
+
+
 .recognition-text {
     max-width: 500px;
+    
 }
+
+
+
 
 /* Sección de certificaciones */
 .certifications {
@@ -187,4 +196,12 @@ nav ul li a {
 
 list-style: none;
 
+
 }
+
+
+.contact-info a {
+    color: black;
+    
+}
+
