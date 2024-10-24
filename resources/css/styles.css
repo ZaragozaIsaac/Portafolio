@@ -205,3 +205,62 @@ list-style: none;
     
 }
 
+/* Contenedor principal de los proyectos (vertical) */
+.project-detail-container {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para que los proyectos se alineen verticalmente */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Cada proyecto individual */
+.project-detail {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px; /* Espaciado entre proyectos */
+    position: relative;
+}
+
+.project-image {
+    width: 45%; /* Imagen ocupa 30% del contenedor */
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex: 1; /* Toma el restante espacio a la derecha de la imagen */
+}
+
+.project-info h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 30px;
+}
+
+.project-date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.project-info p {
+    line-height: 1.6;
+    color: #555;  
+}
+
+.project-info p  a{
+    line-height: 1.6;
+    color: black;  
+    font-size: 18px;
+}
+
