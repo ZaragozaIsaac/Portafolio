@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
     background-color: #f4f4f9;
     color: #333;
+    padding-top: 80px;
 }
 
 a {
@@ -34,6 +35,11 @@ section {
 nav {
     background-color: #4a90e2;
     padding: 20px 0;
+    position: fixed; /* Hace que la barra se quede fija */
+    top: 0; /* Alinea la barra al tope de la página */
+    left: 0;
+    width: 100%; /* Asegura que la barra ocupe todo el ancho de la página */
+    z-index: 1000; /* Asegura que la barra esté por encima del resto del contenido */
 }
 
 nav ul {
