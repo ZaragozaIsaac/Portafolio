@@ -69,14 +69,16 @@ nav ul li a:hover {
     top:0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 150px;
     z-index: 999;
     background-color: #4a90e2;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    line-height: 1.8;
+    line-height: 2.8;
+    
 }
 
 .sidebar li{
@@ -321,6 +323,9 @@ list-style: none;
         display: block;
     }
 
+
+    
+
     .about-me {
         flex-direction: column; /* Alinea los elementos verticalmente */
         text-align: center; /* Centra el texto en pantallas pequeñas */
@@ -390,15 +395,108 @@ list-style: none;
 
     .siderbar a:hover{
         color:gray;
+        
     }
 
     .hideOnMobile:hover{
         color:gray;
+        
     }
 
     .menu-button:hover{
         color:gray;
+       
     }
 
 
+}
+
+/* Estilos para tablets (pantallas de entre 601px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .hideOnMobile{
+        display: none;
+    }
+
+    .menu-button{
+        display: block;
+    }
+
+
+    nav ul {
+        padding-right: 20px;
+    }
+
+    .about-me {
+        flex-direction: column; /* Alinear elementos verticalmente en pantallas más pequeñas */
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 200px; /* Ajusta el tamaño de la imagen de perfil */
+        margin-bottom: 20px;
+    }
+
+    .description {
+        max-width: 80%; /* Ajusta el ancho de la descripción */
+    }
+
+    /* Proyectos */
+    .project-container {
+        flex-direction: column; /* Apila los proyectos verticalmente en tablets */
+        width: 90%; /* Proyectos ocupan el 90% del ancho */
+    }
+
+    .project {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Reconocimientos */
+    .recognition {
+        flex-direction: column; /* Apila las imágenes y el texto */
+        text-align: center;
+    }
+
+    .recognition img {
+        width: 100%; /* Ajusta el tamaño de la imagen al 100% del ancho */
+    }
+
+    /* Certificaciones */
+    .certification-container {
+        flex-direction: column; /* Apilar las certificaciones verticalmente */
+    }
+
+    .certification {
+        width: 90%; /* Ajusta el tamaño de las certificaciones */
+        margin-bottom: 20px;
+    }
+
+    /* Detalle de proyecto */
+    .project-detail {
+        flex-direction: column; /* Apilar la imagen y el texto verticalmente */
+    }
+
+    .project-image {
+        width: 100%; /* La imagen ocupa el ancho completo */
+        margin-bottom: 20px;
+    }
+
+    .siderbar a:hover{
+        color:gray;
+        
+    }
+
+    .hideOnMobile:hover{
+        color:gray;
+        
+    }
+
+    .menu-button:hover{
+        color:gray;
+       
+    }
 }
