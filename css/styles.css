@@ -376,6 +376,7 @@ h2 {
   max-width: 1440px;
   margin: 0 auto;
   overflow: hidden;
+  touch-action: pan-y pinch-zoom;
 }
 
 .project-track {
@@ -928,6 +929,11 @@ h2 {
 
 .certification-carousel {
   overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
+.recognition-scroll {
+  touch-action: pan-x pinch-zoom;
 }
 
 .certification-track {
@@ -1240,19 +1246,55 @@ h2 {
     font-size: clamp(2.05rem, 11vw, 3.1rem);
   }
 
-  .interest-grid,
-  .metrics,
   .pill-grid,
   .skill-grid,
   .mini-projects,
   .pinned-grid,
-  .project-grid,
-  .contact-grid {
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
   .metrics {
     padding-top: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .metrics article {
+    min-height: 118px;
+    padding: 14px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+  }
+
+  .metrics strong {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  .metrics span {
+    margin-top: 6px;
+    font-size: 0.76rem;
+    line-height: 1.45;
+  }
+
+  .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .interest-grid span {
+    min-height: 42px;
+    padding: 9px 10px;
+    gap: 7px;
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .interest-grid i {
+    font-size: 1.08rem;
   }
 
   .section__heading {
@@ -1322,10 +1364,38 @@ h2 {
     padding-right: 0;
   }
 
+  .site-footer {
+    gap: 24px;
+    padding: 42px 18px 28px;
+  }
+
+  .footer__intro h2 {
+    font-size: clamp(2.2rem, 12vw, 3rem);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
   .contact-grid a,
   .contact-grid div {
-    border-left: 0;
-    padding: 0;
+    min-height: 112px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .contact-grid i {
+    font-size: 1.08rem;
+  }
+
+  .contact-grid span {
+    margin: 5px 0 4px;
+    font-size: 0.78rem;
   }
 
   .back-to-top {

@@ -380,6 +380,60 @@
     }
   }
 
+  function enableSwipeNavigation(element, onSwipe, axis = "x") {
+    if (!element || element.dataset.swipeReady === "true") return;
+    element.dataset.swipeReady = "true";
+
+    let startX = 0;
+    let startY = 0;
+    let isTracking = false;
+    let suppressClick = false;
+
+    element.addEventListener("touchstart", (event) => {
+      if (event.touches.length !== 1) return;
+
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      isTracking = true;
+    }, { passive: true });
+
+    element.addEventListener("touchend", (event) => {
+      if (!isTracking || !event.changedTouches.length) return;
+
+      const endX = event.changedTouches[0].clientX;
+      const endY = event.changedTouches[0].clientY;
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+      const primaryDelta = axis === "x" ? deltaX : deltaY;
+      const crossDelta = axis === "x" ? deltaY : deltaX;
+      const isSwipe = Math.abs(primaryDelta) > 42 && Math.abs(primaryDelta) > Math.abs(crossDelta) * 1.25;
+
+      isTracking = false;
+
+      if (!isSwipe) return;
+
+      event.preventDefault();
+      suppressClick = true;
+      onSwipe(primaryDelta < 0 ? 1 : -1);
+
+      window.setTimeout(() => {
+        suppressClick = false;
+      }, 350);
+    }, { passive: false });
+
+    element.addEventListener("touchcancel", () => {
+      isTracking = false;
+    }, { passive: true });
+
+    element.addEventListener("click", (event) => {
+      if (!suppressClick) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClick = false;
+    }, true);
+  }
+
   function enableInfiniteVerticalCarousel(container) {
     const track = container.querySelector(".recognition-vertical-track");
     const itemCount = recognitions.length;
@@ -418,6 +472,8 @@
       event.preventDefault();
       move(event.deltaY > 0 ? 1 : -1);
     }, { passive: false });
+
+    enableSwipeNavigation(container, move, "y");
   }
 
   function setProjectCarouselPosition(animate) {
@@ -453,6 +509,8 @@
       event.preventDefault();
       moveCarousel(event.deltaY > 0 ? 1 : -1);
     }, { passive: false });
+
+    enableSwipeNavigation(viewport, moveCarousel, "x");
   }
 
   function setCertificationCarouselPosition(animate) {
@@ -484,6 +542,8 @@
       event.preventDefault();
       moveCertificationCarousel(event.deltaY > 0 ? 1 : -1);
     }, { passive: false });
+
+    enableSwipeNavigation(viewport, moveCertificationCarousel, "x");
   }
 
   function selectProject(index, scrollBehavior) {
